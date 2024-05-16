@@ -2,6 +2,7 @@ package dao;
 import model.Odontologo;
 import org.apache.log4j.Logger;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OdontologoDaoH2 implements iDao<Odontologo> {
@@ -54,6 +55,24 @@ public class OdontologoDaoH2 implements iDao<Odontologo> {
 
     @Override
     public List<Odontologo> listarTodos() {
-        return List.of();
+        logger.info("inicando la operacion de listado");
+        Connection connection = null;
+        List<Odontologo> odontologos = new ArrayList<>();
+        try {
+            connection = BD.getConnection();
+            PreparedStatement psInsert = connection.prepareStatement(SQL_SELECT);
+            ResultSet resultSet = psInsert.executeQuery();
+            while (resultSet.next()) {
+                String matricula = resultSet.getString(1);
+                String nombre = resultSet.getString(2);
+                String apellido = resultSet.getString(3);
+                odontologos.add(new Odontologo(matricula, nombre, apellido));
+            }
+
+
+        } catch (Exception e) {
+            logger.warn(e.getMessage());
+        }
+        return odontologos;
     }
 }
