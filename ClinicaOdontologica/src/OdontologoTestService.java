@@ -10,9 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class OdontologoTestService {
     @Test
     public void testListarTodos() {
-        iDao<Odontologo, String> odontologoDao = new OdontologoDaoHashMap();
-        odontologoDao.guardar(new Odontologo(1, "Juan", "Perez"));
-        odontologoDao.guardar(new Odontologo(2, "Maria", "Gomez"));
+        OdontologoDaoHashMap odontologoDao = new OdontologoDaoHashMap();
+        odontologoDao.guardar(new Odontologo("123", "Juan", "Perez"));
+        odontologoDao.guardar(new Odontologo("223", "Maria", "Gomez"));
         List<Odontologo> odontologos = odontologoDao.listarTodos();
         assertEquals(2, odontologos.size());
     }

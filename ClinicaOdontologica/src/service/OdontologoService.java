@@ -8,7 +8,7 @@ import java.util.List;
 
 public class OdontologoService {
     //relacion de asociacion directa con el DAO
-    private iDao<Odontologo, S> odontologoiDao;
+    private iDao<Odontologo> odontologoiDao;
 
     public OdontologoService() {
         odontologoiDao= new OdontologoDaoH2();

@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OdontologoDaoH2 implements iDao<Odontologo, S> {
+public class OdontologoDaoH2 implements iDao<Odontologo> {
     /*
     private Integer id;
     private String numeroMatricula;
@@ -17,7 +17,7 @@ public class OdontologoDaoH2 implements iDao<Odontologo, S> {
     private static final String SQL_SELECT="SELECT * FROM ODONTOLOGOS";
 
     @Override
-    public void guardar(Odontologo odontologo) {
+    public Odontologo guardar(Odontologo odontologo) {
         logger.info("inicando la operacion de guardado");
         Connection connection=null;
         try{
@@ -38,20 +38,6 @@ public class OdontologoDaoH2 implements iDao<Odontologo, S> {
         return odontologo;
     }
 
-    @Override
-    public Odontologo buscarPorID(Integer id) {
-        return null;
-    }
-
-    @Override
-    public void actualizar(Odontologo odontologo) {
-
-    }
-
-    @Override
-    public void eliminar(Integer id) {
-
-    }
 
     @Override
     public List<Odontologo> listarTodos() {
