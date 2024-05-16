@@ -2,10 +2,7 @@ package dao;
 
 import java.util.List;
 
-public interface iDao <T> {
-    T guardar (T t);
-    T buscarPorID (Integer id);
-    void actualizar (T t);
-    void eliminar (Integer id);
+public interface iDao <T, S> {
+    void guardar (T t);
     List<T> listarTodos();
 }

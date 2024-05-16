@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class OdontologoDaoHashMap implements IDao<Odontologo> {
-    private HashMap<Integer, Odontologo> odontologos = new HashMap<>();
+
+public class OdontologoDaoHashMap implements iDao<Odontologo, S> {
+    private HashMap<String, Odontologo> odontologos = new HashMap<>();
 
     @Override
     public void guardar(Odontologo odontologo) {
